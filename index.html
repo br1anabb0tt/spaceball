@@ -4,9 +4,10 @@
 		<meta http-equiv="X-UA-Compatible" content="chrome=1"" />
 		<title>Brian P. Abbott | Processing Sketch | Spaceball</title>
 		<link rel="icon"  type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAQAAVzABAEAjBQAaDwYAWjUGAGE6CQBrQQ0ATS8PAFhAJwBUQC8AbFI6AHVXPACBZk4A4NrWAPb19QAAAAAAAMmZmZmZmgAJIwAAAAAAcMIjPjA+PjAKpxIuMDMzMAm0Ii4zMzMACaIiLt3dMAAJtyIuIzPQAAm0Un5yM+IzKLRkfncy4iIotRF+dyLkIiq0QX53F+EiGrQUTkd34iIatEVu7u5iIVrBVVRBRFRVbAtGZGZla2uwAMu7u7u8vADAAwAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABAADAAwAA" />
-		<link rel="stylesheet" href="stylesheets/styles.css">
-		<link rel="stylesheet" href="stylesheets/pygment_trac.css">
-		<script src="javascripts/scale.fix.js"></script>
+		<link rel="stylesheet" href="/stylesheets/styles.css">
+		<link rel="stylesheet" href="/stylesheets/project-styles.css">
+		<link rel="stylesheet" href="/stylesheets/pygment_trac.css">
+		<script src="/javascripts/scale.fix.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -14,7 +15,7 @@
 		<!--[if lt IE 9]>
 			<script type="text/javascript">alert("Your browser does not support the canvas tag.");</script>
 		<![endif]-->
-		<script src="javascripts/processing.js" type="text/javascript"></script>
+		<script src="/javascripts/processing.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			// convenience function to get the id attribute of generated sketch html element
 			function getProcessingSketchId () { return 'spaceball'; }
@@ -23,14 +24,20 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Semi-circle with random x-axis movement</h1>
-        <p>next step: add user-controlled shape to bottom of screen</p>
-        <p class="view"><a href="https://github.com/br1anabb0tt/processing-sketches">View the Project on GitHub <small>br1anabb0tt/spaceball</small></a></p>
-        <ul>
-          <li><a href="https://github.com/br1anabb0tt/spaceball/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/br1anabb0tt/spaceball/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/br1anabb0tt/spaceball">View On <strong>GitHub</strong></a></li>
-        </ul>
+        <h1>User-controlled shape shoots at randomly-moving shape</h1>
+        <p>next steps: debug glitchy shooting function and add collision detection between laser and semi-circle</p>
+			<p class="view"><a href="http://brianpabbott.com/processing/spaceball/">view this project on my website: <small>brianpabbott.com/processing/spaceball</small></a></p>
+			<p class="view"><a href="https://github.com/br1anabb0tt/spaceball">view this project on github: <small>br1anabb0tt/spaceball</small></a></p>
+			<p class="view"><a href="http://br1anabb0tt.github.io/">my github home: <small>br1anabb0tt.github.io</small></a></p>
+			<ul>
+			  <li><a href="https://github.com/br1anabb0tt/spaceball/zipball/master">Download <strong>ZIP File</strong></a></li>
+			  <li><a href="https://github.com/br1anabb0tt/spaceball/tarball/master">Download <strong>TAR Ball</strong></a></li>
+			</ul>
+			<ul id="navlinks">
+				<li><a href="http://brianpabbott.com/processing/spaceball/">View On My<strong>Website</strong></a></li>
+			  <li><a href="https://github.com/br1anabb0tt/spaceball">View On <strong>GitHub</strong></a></li>
+			  <li><a href="http://br1anabb0tt.github.io/">My GitHub <strong>Home</strong></a></li>
+			</ul>
       </header>
 
 
