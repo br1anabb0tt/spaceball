@@ -24,9 +24,9 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>User-controlled shape shoots at randomly-moving shape</h1>
+        <h1>spaceball</h1>
         <p>next steps: debug glitchy shooting function and add collision detection between laser and semi-circle</p>
-			<p class="view"><a href="http://brianpabbott.com/processing/spaceball/">view this project on my website: <small>brianpabbott.com/processing/spaceball</small></a></p>
+			<p class="view"><a href="http://brianpabbott.com/processing/spaceballv2/">view this project on my website: <small>brianpabbott.com/processing/spaceball</small></a></p>
 			<p class="view"><a href="https://github.com/br1anabb0tt/spaceball">view this project on github: <small>br1anabb0tt/spaceball</small></a></p>
 			<p class="view"><a href="http://br1anabb0tt.github.io/">my github home: <small>br1anabb0tt.github.io</small></a></p>
 			<ul>
@@ -55,16 +55,24 @@
 		</div>
      
       <section>
-		<h1>spaceball</h1>
-    		<p id="description"></p>
-			<p id="sources">Source code: <a href="spaceball.pde">spaceball</a> (or see below)</p>
-			<p>
-			Built with <a href="http://processing.org" title="Processing">Processing</a>
-			and <a href="http://processingjs.org" title="Processing.js">Processing.js</a>
-			</p>
+		<h2>User-controlled shape shoots at randomly-moving shape</h2>
+		<p id="description">Mouse left or right to move triangle, click to fire</p>
+		<h3>version history</h3>
+		<ul>
+			<li><strong>v2:</strong> added user-controlled shape, shooting function and some colors</li>
+			<li><strong>v1:</strong> initial version with randomly-moving half-circle</li>
+		</ul>
+		<p id="sources">Source code: <a href="spaceball.pde">spaceball</a> (or see below)</p>
+		<p>
+		Built with <a href="http://processing.org" title="Processing">Processing</a>
+		and <a href="http://processingjs.org" title="Processing.js">Processing.js</a>
+		</p>
+		
 		<pre><code>
 float xoff = 0.0;
 float xincrement = 0.01; 
+float laserSpeed = 40;
+float y = 300;
 
 void setup() {
   size(640, 360);
@@ -75,18 +83,43 @@ void setup() {
 void draw()
 {
   // Create an alpha blended background
-   fill(0,100);
+  fill(0);
+  noStroke();
   rect(0,0,width,height);
+  
+  // float n = random(0,width);  // Try this line instead of noise
   
   // Get a noise value based on xoff and scale it according to the window's width
    float n = noise(xoff)*width;
   
   // With each cycle, increment xoff
   xoff += xincrement;
+ 
+   
+  // Draw triangle at screen bottom with x-axis location controlled by mouse
+  fill(0,0,255);
+  noStroke();
+  triangle((mouseX-32), height, mouseX, (height-50), (mouseX+32), height);
   
   // Draw the ellipse at the value produced by perlin noise
-  fill(200);
-  ellipse(n,height/200, 64, 64);
+  if (mouseX == n) {
+     fill(0,0,255);
+  } else {
+    fill(255, 204, 0);
+  }
+  noStroke();
+  ellipse(n, 0, 64, 64);
+}
+
+void mousePressed() {
+  while (y > 0) {
+    fill(255, 204, 0);
+    rect(mouseX, y, 10, 30);
+    y -= laserSpeed;
+  }
+  if (y < 0) {
+    y = (height-52);
+  }
 }
 		</code></pre>
 
